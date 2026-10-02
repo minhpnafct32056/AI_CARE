@@ -1,0 +1,6 @@
+{
+  "name": "AI Care - Trợ lý Sức khỏe AI",
+  "description": "Ứng dụng mô phỏng di động Trợ lý Sức khỏe AI: Quản lý lịch trình, phân tích chỉ số, chatbot tư vấn và kết nối y tế thông minh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

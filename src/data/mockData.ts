@@ -1,0 +1,166 @@
+import { ScheduleItem, VitalMetric, MedicalPartner, AnalyticsPoint, ChatMessage } from '../types';
+
+export const INITIAL_SCHEDULE: ScheduleItem[] = [
+  {
+    id: 'sch-1',
+    time: '07:00',
+    title: 'Uống thuốc huyết áp Amlodipine',
+    category: 'medication',
+    detail: '1 viên 5mg sau khi ăn sáng nhẹ',
+    completed: true,
+  },
+  {
+    id: 'sch-2',
+    time: '08:30',
+    title: 'Đi bộ buổi sáng & Giãn cơ',
+    category: 'exercise',
+    detail: 'Mục tiêu 3.000 bước quanh công viên',
+    completed: true,
+  },
+  {
+    id: 'sch-3',
+    time: '11:00',
+    title: 'Bổ sung nước khoáng (Cốc thứ 3)',
+    category: 'water',
+    detail: '350ml nước ấm giúp thanh lọc cơ thể',
+    completed: true,
+  },
+  {
+    id: 'sch-4',
+    time: '12:30',
+    title: 'Men vi sinh Bio & Men dạ dày',
+    category: 'medication',
+    detail: '1 gói hòa tan với nước lọc sau ăn trưa',
+    completed: false,
+  },
+  {
+    id: 'sch-5',
+    time: '15:30',
+    title: 'Nghỉ giải lao & Đo lại huyết áp',
+    category: 'vitals',
+    detail: 'Ngồi tĩnh lặng 5 phút trước khi đo',
+    completed: false,
+  },
+];
+
+export const INITIAL_VITALS: VitalMetric[] = [
+  {
+    id: 'vital-hr',
+    label: 'Nhịp tim',
+    value: '82',
+    unit: 'bpm',
+    status: 'Nhịp tim chuẩn',
+    statusColor: 'emerald',
+    trend: 'Dao động 74 - 88 hôm nay',
+    iconName: 'heart',
+  },
+  {
+    id: 'vital-steps',
+    label: 'Bước chân',
+    value: '5.420',
+    unit: 'bước',
+    status: '68% mục tiêu',
+    statusColor: 'sky',
+    trend: 'Mục tiêu 8.000 bước/ngày',
+    iconName: 'footprints',
+  },
+  {
+    id: 'vital-sleep',
+    label: 'Giấc ngủ đêm qua',
+    value: '7.5',
+    unit: 'giờ',
+    status: 'Ngủ sâu 2.1h',
+    statusColor: 'emerald',
+    trend: 'Chất lượng ngủ: 88/100',
+    iconName: 'moon',
+  },
+];
+
+export const INITIAL_MESSAGES: ChatMessage[] = [
+  {
+    id: 'msg-1',
+    sender: 'ai',
+    text: 'Chào bác An! Cháu là AI Care - Trợ lý Sức khỏe đồng hành của bác. Hôm nay nhịp tim của bác rất ổn định (82 bpm) và bác đã uống đủ thuốc sáng. Bác cần cháu tư vấn thêm điều gì ạ?',
+    timestamp: '08:45',
+  },
+];
+
+export const QUICK_PROMPTS = [
+  'Thực đơn giảm cân đau dạ dày',
+  'Bài tập giãn cơ văn phòng',
+  'Nhắc lịch uống thuốc',
+  'Mẹo ngủ sâu khi căng thẳng',
+];
+
+export const PARTNERS_DATA: MedicalPartner[] = [
+  {
+    id: 'p-1',
+    name: 'Bệnh Viện Đại Học Y Dược',
+    type: 'hospital',
+    rating: 4.9,
+    reviewsCount: 1820,
+    address: '215 Hồng Bàng, P.11, Quận 5, TP.HCM',
+    distance: '1.8 km',
+    verified: true,
+    licenseId: 'BYT-2024-HCM-00812',
+    openHours: '24/7 Cấp cứu & Khám bệnh',
+    phone: '1900 7178',
+    badgeText: 'Bệnh viện Hạng 1 Toàn quốc',
+    specialties: ['Tim mạch', 'Nội tiêu hóa', 'Lão khoa', 'Thần kinh'],
+  },
+  {
+    id: 'p-2',
+    name: 'Hệ Thống Nhà Thuốc Long Châu #42',
+    type: 'pharmacy',
+    rating: 4.8,
+    reviewsCount: 940,
+    address: '142 Nguyễn Thị Minh Khai, Quận 3',
+    distance: '650 m',
+    verified: true,
+    licenseId: 'GPP-HCM-2023-8831',
+    openHours: '06:30 - 22:30 hàng ngày',
+    phone: '1800 6928',
+    badgeText: 'Chuẩn GPP Bộ Y Tế',
+    specialties: ['Dược phẩm theo đơn', 'Thực phẩm chức năng', 'Máy đo huyết áp Omron'],
+  },
+  {
+    id: 'p-3',
+    name: 'Phòng Khám Đa Khoa Quốc Tế CarePlus',
+    type: 'clinic',
+    rating: 4.7,
+    reviewsCount: 610,
+    address: '107 Tân Hải, Phường 13, Quận Tân Bình',
+    distance: '3.2 km',
+    verified: true,
+    licenseId: 'SYT-HCM-CLINIC-4402',
+    openHours: '07:30 - 20:00',
+    phone: '1800 6116',
+    badgeText: 'Tiêu chuẩn Quốc tế JCI',
+    specialties: ['Tầm soát tim mạch', 'Khám sức khỏe tổng quát', 'Nội soi dạ dày'],
+  },
+  {
+    id: 'p-4',
+    name: 'Nhà Thuốc An Khang Medical Hub',
+    type: 'pharmacy',
+    rating: 4.8,
+    reviewsCount: 420,
+    address: '89 Cách Mạng Tháng 8, Quận 1',
+    distance: '1.1 km',
+    verified: true,
+    licenseId: 'GPP-HCM-2024-1109',
+    openHours: '07:00 - 22:00',
+    phone: '1900 1572',
+    badgeText: 'Thuốc chính hãng 100%',
+    specialties: ['Thuốc tim mạch & tiểu đường', 'Giao hỏa tốc 30 phút'],
+  },
+];
+
+export const ANALYTICS_DATA: AnalyticsPoint[] = [
+  { day: 'T2', fullDate: '25/09', heartRate: 84, weight: 65.4, sleepHours: 6.8, steps: 4800 },
+  { day: 'T3', fullDate: '26/09', heartRate: 80, weight: 65.3, sleepHours: 7.2, steps: 6100 },
+  { day: 'T4', fullDate: '27/09', heartRate: 85, weight: 65.2, sleepHours: 7.0, steps: 5200 },
+  { day: 'T5', fullDate: '28/09', heartRate: 81, weight: 65.0, sleepHours: 7.8, steps: 5900 },
+  { day: 'T6', fullDate: '29/09', heartRate: 79, weight: 64.9, sleepHours: 7.4, steps: 6400 },
+  { day: 'T7', fullDate: '30/09', heartRate: 83, weight: 64.8, sleepHours: 8.0, steps: 7200 },
+  { day: 'CN', fullDate: '01/10', heartRate: 82, weight: 64.8, sleepHours: 7.5, steps: 5420 },
+];
